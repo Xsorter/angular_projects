@@ -1,0 +1,74 @@
+[
+	{
+		"id" : 1,
+		"imgSrc" : "img/logos/ciklum.jpg",
+		"company": "Cicklum",
+		"position": "Software Engineer",
+		"salary": "3000 usd",
+		"city": "Kiyv",
+		"added": 30
+	},
+	{
+		"id" : 2,
+		"imgSrc" : "img/logos/product.jpg",
+		"company": "Product Technology ltd",
+		"position": "Waitress",
+		"salary": "300 usd",
+		"city": "Kiyv",
+		"added": 4
+	},
+	{
+		"id" : 3,
+		"imgSrc" : "img/logos/it_company.jpg",
+		"company": "IT company",
+		"position": "Software Engineer",
+		"salary": "1000 usd",
+		"city": "Kiyv",
+		"added": 10
+	},
+	{
+		"id" : 4,
+		"imgSrc" : "img/logos/guard.png",
+		"company": "Guard & co",
+		"position": "Guardian",
+		"salary": "200 usd",
+		"city": "Kiyv",
+		"added": 7
+	},
+	{
+		"id" : 5,
+		"imgSrc" : "img/logos/fuib.jpg",
+		"company": "FUIB",
+		"position": "Sales manager",
+		"salary": "400 usd",
+		"city": "Dnipro",
+		"added": 1
+	},
+	{
+		"id" : 6,
+		"imgSrc" : "img/logos/football.png",
+		"company": "Football Club",
+		"position": "Medician",
+		"salary": "800 usd",
+		"city": "Poltava",
+		"added": 5
+	},
+	{
+		"id" : 7,
+		"imgSrc" : "img/logos/school.jpg",
+		"company": "School",
+		"position": "Teacher",
+		"salary": "300 usd",
+		"city": "Kiyv",
+		"added": 4
+	},
+	{
+		"id" : 8,
+		"imgSrc" : "img/logos/restaraunt.jpg",
+		"company": "Restaraunt",
+		"position": "Baker",
+		"salary": "500 usd",
+		"city": "Kiyv",
+		"added": 1
+	}
+]

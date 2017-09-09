@@ -1,3 +1,5 @@
+
+
 <p>Hi, {{$ctrl.name}} !</p>
 
 <p>List of our related vacancies:</p>
@@ -6,17 +8,28 @@
 <p>
 	Order by: 
 	<select ng-model="$ctrl.orderProp">
-		<option value="position">position name</option>
+		<option value="position">position name A-Z</option>
+		<option value="-position">position name Z-A</option>
 		<option value="added">latest added</option>
+		<option value="-added">first added</option>
 	</select>
 </p>
 
 
 
-<ul ng-repeat="vacancy in $ctrl.vacancys | filter: $ctrl.query | orderBy: $ctrl.orderProp">
-	<li>
+<ul>
+	<li ng-repeat="vacancy in $ctrl.vacancys | filter: $ctrl.query | orderBy: $ctrl.orderProp" class="item-box">
+
+		<a class="item-logo" href="#!/vacancy/{{vacancy.id}}">
+			<img ng-src="{{vacancy.imgSrc}}" alt="{{vacancy.company}}">
+		</a>
+
 		<p>{{vacancy.company}}</p>
-		<p>{{vacancy.position}}</p>
+
+		<p>
+			<a href="#!/vacancy/{{vacancy.id}}">{{vacancy.position}}</a>
+		</p>
+
 		<p>{{vacancy.salary}}</p>
 		<p>{{vacancy.city}}</p>
 		<p>Added {{vacancy.added}} days ago</p>

@@ -1,5 +1,7 @@
 'use strict'
 
 angular.module('jobsApp', [
-	'vacancyList'
+	'ngRoute',
+	'vacancyList',
+	'vacancyDetail',
 ]);
