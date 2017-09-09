@@ -9,30 +9,36 @@ angular
 
 			this.vacancys = [
 				{
-					position: "Повар",
-					salary: "10 000 грн",
-					city: "Киев",
+					company: "Food ltd.",
+					position: "Cook",
+					salary: "500 usd",
+					city: "Kiyv",
 					added: 2
 				},
 				{
-					position: "Швея",
-					salary: "7 000 грн",
-					city: "Киев",
+					company: "Product Technology ltd",
+					position: "Waitress",
+					salary: "300 usd",
+					city: "Kiyv",
 					added: 4
 				},
 				{
-					position: "Программист",
-					salary: "20 000 грн",
-					city: "Киев",
+					company: "IT company",
+					position: "Software Engineer",
+					salary: "1000 usd",
+					city: "Kiyv",
 					added: 10
 				},
 				{
-					position: "Охранник",
-					salary: "6 000 грн",
-					city: "Киев",
+					company: "Guard & co",
+					position: "Guardian",
+					salary: "200 usd",
+					city: "Kiyv",
 					added: 7
 				}
 			]
+
+			this.orderProp = 'added';
 
 
 

@@ -1,9 +1,24 @@
-<p>Привет, {{$ctrl.name}}</p>
+<p>Hi, {{$ctrl.name}} !</p>
 
-<p>Список вакансий:</p>
+<p>List of our related vacancies:</p>
 
-<ul ng-repeat="vacancy in $ctrl.vacancys">
+<p>Search <input type="text" name="search" ng-model="$ctrl.query"></p>
+<p>
+	Order by: 
+	<select ng-model="$ctrl.orderProp">
+		<option value="position">position name</option>
+		<option value="added">latest added</option>
+	</select>
+</p>
+
+
+
+<ul ng-repeat="vacancy in $ctrl.vacancys | filter: $ctrl.query | orderBy: $ctrl.orderProp">
 	<li>
+		<p>{{vacancy.company}}</p>
 		<p>{{vacancy.position}}</p>
+		<p>{{vacancy.salary}}</p>
+		<p>{{vacancy.city}}</p>
+		<p>Added {{vacancy.added}} days ago</p>
 	</li>
 </ul>
