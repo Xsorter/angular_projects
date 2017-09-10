@@ -1,0 +1,13 @@
+{
+	"imgSrc" : "img/logos/fuib.jpg",
+	"company": "FUIB",
+	"position": "Sales manager",
+	"salary": "400 usd",
+	"city": "Dnipro",
+	"description": "Searching for a worker for fulltime job. High salary. Coffee, coockies, 20-day vacation per year.",
+	"contacts": {
+		"phone": "+380-999-99-99",
+		"email": "xxx@xx.ua",
+		"site": "company.com"
+	}
+}

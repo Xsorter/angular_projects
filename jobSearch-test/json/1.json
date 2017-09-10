@@ -1,0 +1,13 @@
+{
+	"imgSrc" : "img/logos/ciklum.jpg",
+	"company": "Cicklum",
+	"position": "Software Engineer",
+	"salary": "3000 usd",
+	"city": "Kiyv",
+	"description": "Worker for parttime job. High salary. Coffee, coockies, 20-day vacation per year.",
+	"contacts": {
+		"phone": "+380-999-99-99",
+		"email": "xxx@xx.ua",
+		"site": "company.com"
+	}
+}

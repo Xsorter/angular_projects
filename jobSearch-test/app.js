@@ -4,4 +4,5 @@ angular.module('jobsApp', [
 	'ngRoute',
 	'vacancyList',
 	'vacancyDetail',
+	'headerApp',
 ]);

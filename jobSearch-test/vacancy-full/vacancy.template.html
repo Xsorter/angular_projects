@@ -1,0 +1,22 @@
+<header-app></header-app>
+
+<div class="vacancy-full-box">
+
+	<img ng-src="{{$ctrl.vacancy.imgSrc}}" alt="{{$ctrl.vacancy.position}}">
+
+	<h1>{{$ctrl.vacancy.position}}</h1>
+
+	
+
+	<p>{{$ctrl.vacancy.company}}</p>
+	<p>{{$ctrl.vacancy.salary}}</p>
+	<p>{{$ctrl.vacancy.city}}</p>
+	<p>{{$ctrl.vacancy.description}}</p>
+
+	<h3 class="vacancy-contacts-title">Contacts:</h3>
+	<ul>
+		<li ng-repeat="contact in $ctrl.vacancy.contacts">
+			{{contact}}
+		</li>
+	</ul>
+</div>
