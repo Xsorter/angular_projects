@@ -3,6 +3,7 @@
 angular.module('jobsApp', [
 	'ngRoute',
 	'vacancyList',
+	'core',
 	'vacancyDetail',
 	'headerApp',
 ]);
