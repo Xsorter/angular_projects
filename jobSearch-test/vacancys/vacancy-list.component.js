@@ -8,10 +8,8 @@ angular
 			var self = this;
 			self.name = "Xsorter";
 			self.orderProp = 'added';
-
 			
 			self.vacancys = Vac.query();
 				
-		
 		}]
 	});
