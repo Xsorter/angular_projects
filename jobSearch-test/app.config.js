@@ -14,6 +14,12 @@ angular.module('jobsApp')
 			when('/vacancy/:id', {
 				template: '<vacancy-detail></vacancy-detail>'
 			}).
+			when('/admin', {
+				template: '<admin></admin>'
+			}).
+			when('/login', {
+				template: '<login></login>'
+			}).
 			otherwise('/vacancy')
 		}
 	])

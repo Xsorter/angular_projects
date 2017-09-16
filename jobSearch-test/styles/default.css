@@ -34,6 +34,16 @@ header p{
 	letter-spacing: 1px;
 }
 
+.header-link-admin{
+	float: left;
+	margin-top: -18px;.
+	color: #a6ddff;
+}
+
+.header-link-admin a{
+    color: #a6ddff;
+}
+
 .filters-wrapper{
 	background: rgba(255,255,255,0.6);
 	padding: 10px;

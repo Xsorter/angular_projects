@@ -6,4 +6,6 @@ angular.module('jobsApp', [
 	'core',
 	'vacancyDetail',
 	'headerApp',
+	'login',
+	'admin',
 ]);
