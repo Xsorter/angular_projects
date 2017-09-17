@@ -1,1 +1,15 @@
-<p>Login info</p>
+<div class="login-container-wrapper">
+    <div class="login-wrapper">
+        <form class="login-form" role="form">
+
+            <input ng-model="username" type="email">
+            <input ng-model="pass" type="password">
+
+            {{username}}
+            {{pass}}
+
+            <button type="button" ng-click="Auth()">enter</button>
+        </form>
+    </div>
+</div>
+

@@ -2,6 +2,7 @@
 
 angular.module('jobsApp', [
 	'ngRoute',
+	'firebase',
 	'vacancyList',
 	'core',
 	'vacancyDetail',
