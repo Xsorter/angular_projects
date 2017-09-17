@@ -12,7 +12,7 @@ angular.module('login', []).
                 console.log($scope.username);
                 var auth = $firebaseAuth();
                 auth.$signInWithEmailAndPassword($scope.username, $scope.pass).then(function(firebaseUser) {
-                    $location.path = '#!/admin';
+                    $location.path('admin');
                     console.log("Signed in as:", firebaseUser.uid);
                     console.log("User arr:", firebaseUser);
                   }).catch(function(error) {
