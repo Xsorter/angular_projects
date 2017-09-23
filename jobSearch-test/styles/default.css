@@ -59,6 +59,20 @@ header p{
 	height: 200px;
 }
 
+.login-erorr{
+	margin: 10px;
+    font-size: 85%;
+	color: red;
+	transition: all ease-out 0.2s;
+}
+
+.login-success{
+	margin: 10px;
+	font-size: 85%;
+	color: green;
+	transition: all ease-out 0.2s;
+}
+
 .login-container-wrapper{
 	width: 100%;
     height: 100%;

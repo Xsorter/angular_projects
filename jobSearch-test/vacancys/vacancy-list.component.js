@@ -1,15 +1,32 @@
 'use strict'
 
-angular
-	.module('vacancyList')
+let appVacancies = angular.module('vacancyList');
+
+appVacancies
 	.component('vacancyList', {
 		templateUrl: "vacancys/vacancy-list.html",
-		controller: ['Vac', function VacancyListController (Vac) {
-			var self = this;
+		controller: ['Vac','$scope','$firebaseAuth','$timeout' ,'$firebaseArray', '$firebaseObject','$firebase', '$location', function VacancyListController (Vac,$q, $scope, $timeout, $firebaseAuth,$firebaseArray, $firebaseObject,$firebase, $location) {
+			let self = this;
 			self.name = "Xsorter";
 			self.orderProp = 'added';
+			$scope.res = '';
+
+			let rootRef = firebase.database().ref(); /*firebase request to database*/ 
+			rootRef.once('value')
+				.then(function (snap) {
+					$scope.res = snap.val().app.vacancies;
+
+					angular.forEach(snap.val(), function(index) {
+						self.result = Object.values(index.vacancies); /*make an array for comfortable ng-repeat*/	
+					})
+					console.log(self.result);
+					console.log($scope.res);
+					return $timeout(20); /*set timeout to get promise*/ 
+			}); 
 			
-			self.vacancys = Vac.query();
-				
+			self.vacancys = Vac.query(); 
+			
 		}]
 	});
+
+	

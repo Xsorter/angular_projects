@@ -1,15 +1,18 @@
 <div class="login-container-wrapper">
     <div class="login-wrapper">
-        <form ng-submit="Auth()" class="login-form" role="form">
+        <form ng-submit="Auth()" class="login-form" name="regForm" role="form">
 
             <input ng-model="username" type="email">
+            
             <input ng-model="pass" type="password">
+            <p class="login-error">{{error}}</p>
+            <p class="login-success">{{success}}</p>
 
-            {{username}}
-            {{pass}}
-
-            <button type="submit">enter</button>
+            <button ng-disabled="!username || !pass" type="submit">enter</button>
         </form>
     </div>
 </div>
+
+{{username}}
+{{pass}}
 

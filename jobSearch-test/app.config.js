@@ -1,5 +1,6 @@
 'use strict'
 
+
 angular.module('jobsApp')
 	.config([
 		'$locationProvider',

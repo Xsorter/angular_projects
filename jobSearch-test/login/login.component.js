@@ -1,23 +1,43 @@
 'use sctirct'
 
-angular.module('login', []). 
-    component('login', {
+let app = angular.module('login', []);
+
+ 
+app.component('login', {
         templateUrl: 'login/login.template.html',
-        controller: function loginController ($scope, $location, $firebaseAuth, $firebaseObject) {
+        controller: function loginController ($scope, commonProp, $location, $firebaseAuth, $firebaseObject) {
             var self = this;
+
+        
+            $scope.commonProp = commonProp;
             $scope.username = '';
             $scope.pass = '';
+            $scope.error = '';
+            $scope.success = '';
 
+            $scope.url = config.databaseURL;
+            
+            console.log(config.databaseURL);
+            
             $scope.Auth = function(){
-                console.log($scope.username);
                 var auth = $firebaseAuth();
-                auth.$signInWithEmailAndPassword($scope.username, $scope.pass).then(function(firebaseUser) {
-                    $location.path('admin');
-                    console.log("Signed in as:", firebaseUser.uid);
-                    console.log("User arr:", firebaseUser);
-                  }).catch(function(error) {
-                    console.log("Authentication failed:", error);
-                  });
+                auth.$signInWithEmailAndPassword($scope.username, $scope.pass)
+                    .then(function(firebaseUser) {
+                        $scope.success = 'Success login. Loading...';
+                        $location.path('admin');
+                        console.log("Signed in as:", firebaseUser.uid);
+                    })
+                    .catch(function(error) {
+                        $scope.error = error.message;          
+                        console.log("Authentication failed:", error);
+                    });
             }
         }
     })
+
+app.factory('commonProp', function(){
+    return {
+        isLogged: false,
+        username: null
+    }
+})    

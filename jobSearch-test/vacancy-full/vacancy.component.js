@@ -11,6 +11,7 @@ angular.module('vacancyDetail').
 					self.vacancy = response.data;
 					console.log(response.data);
 				});
+				
 			}
 		]
 	});

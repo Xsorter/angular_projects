@@ -2,7 +2,7 @@
 <header-app></header-app>
 
 <div class="main-container">
-
+		
 	<div class="filters-wrapper">
 		<p>Hi, {{$ctrl.name}} !</p>
 
@@ -20,7 +20,13 @@
 		</p>
 	</div>
 
-
+	<div>
+		rep 5
+		{{$ctrl.result}}
+		<div ng-repeat="item in $ctrl.result">
+			{{item.title}}
+		</div>
+	</div>
 
 	<ul class="vacancy-list-wrapper">
 		<li ng-repeat="vacancy in $ctrl.vacancys | filter: $ctrl.query | orderBy: $ctrl.orderProp" class="item-box">

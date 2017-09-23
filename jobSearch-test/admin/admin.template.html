@@ -1,1 +1,15 @@
-<div style="font-size: 150%; text-align: center; color: #555">Admin test</div>
+<div style="font-size: 150%; text-align: center; color: #555">
+    Admin test - hello, {{email}}
+</div>
+
+
+<form ng-submit="AddVacancy()" action="">
+    <input type="text" ng-model="vacancy.title"  placeholder="Add a company title">
+    <input type="text" ng-model="vacancy.position" placeholder="Add a vacancy position">
+    <input type="text" ng-model="vacancy.salary" placeholder="Add a vacancy salary">
+    <input type="text" ng-model="vacancy.city" placeholder="Add a company city">
+    <!-- <input type="file" ng-model="vacancy.logo" placeholder="Upload a logo"> -->
+
+    <button ng-disabled="!vacancy.title || !vacancy.position || !vacancy.salary || !vacancy.city" type="submit">Add vacancy</button>
+</form>
+
