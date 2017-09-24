@@ -7,12 +7,24 @@ appVacancies
 		templateUrl: "vacancys/vacancy-list.html",
 		controller: ['Vac','$scope', '$firebaseAuth','$timeout' ,'$firebaseArray', '$firebaseObject','$firebase', '$routeParams', '$location', function VacancyListController (Vac,$q, $scope, $timeout, $firebaseAuth,$firebaseArray, $firebaseObject, $firebase, $routeParams, $location) {
 			let self = this;
-			self.name = "Xsorter";
 			self.orderProp = '-created';
 			$scope.res = '';
 
-		
+			firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+				  self.name = user.email;
+				  console.log(user)
+				} else {
+				  self.signedOut = true;		
+				  console.log('Not signed')
+				}
+				return $timeout(20);
+			});
+			
+			let user = firebase.auth();
+			console.log(user.currentUser);
 			console.log($routeParams);
+
 
 
 			let rootRef = firebase.database().ref(); /*firebase request to database*/ 

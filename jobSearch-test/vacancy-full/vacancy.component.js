@@ -15,9 +15,6 @@ angular.module('vacancyDetail').
 					.then(function (snap) {
 						self.resFull = snap.val();
 						self.resultFull = Object.values(self.resFull); /*make an array for comfortable ng-repeat*/
-						console.log(self.resultFull);
-						console.log(self.resFull);
-						console.log(self.resFull.title);
 						return $timeout(10); /*set timeout to get promise*/ 
 				}); 
 

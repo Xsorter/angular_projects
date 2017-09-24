@@ -4,7 +4,18 @@
 <div class="main-container">
 		
 	<div class="filters-wrapper">
-		<p>Hi, {{$ctrl.name}} !</p>
+		<p ng-show="$ctrl.name" class="ng-hide">Hi, {{$ctrl.name}}!</p>
+		<div ng-show="$ctrl.signedOut" class="ng-hide">
+			<p>Please, sign in to add new vacancies.</p>
+
+			<div class="welcome-message-wrapper_signed-out"> 
+				<p>You can do that in test mode with this records:</p>
+				<ul>
+					<li>login: test@test.com</li>
+					<li>pass: test01</li>
+				</ul>
+			</div> 
+		</div>
 
 		<p>List of our related vacancies:</p>
 
@@ -14,7 +25,9 @@
 			<select ng-model="$ctrl.orderProp">
 				<option value="position">position name A-Z</option>
 				<option value="-position">position name Z-A</option>
-				<option selected value="-created">latest added</option>
+				<option value="title">company name A-Z</option>
+				<option value="-title">company name Z-A</option>
+				<option value="-created">latest added</option>
 				<option value="created">first added</option>
 			</select>
 		</p>

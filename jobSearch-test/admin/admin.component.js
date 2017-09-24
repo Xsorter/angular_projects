@@ -3,8 +3,8 @@
 angular.module('admin', []). 
     component('admin', {
         templateUrl: 'admin/admin.template.html',
-        controller: function adminController (commonProp, $scope, $firebaseAuth,$firebaseArray, $firebaseObject,$firebase, $location){
-            
+        controller: function adminController (commonProp, $scope, $timeout, $firebaseAuth,$firebaseArray, $firebaseObject,$firebase, $location){
+            let self = this;
             //UNCOMMENT that before prod!
 
             /*let user = firebase.auth().currentUser;     
@@ -13,12 +13,25 @@ angular.module('admin', []).
             }else{
                 $location.path('login');
             }
-            $scope.commonProp = commonProp; 
+        
             $scope.email = user.email; */
+
+            $scope.email = '';
+
+            firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+                  $scope.email = user.email;
+				  console.log($scope.email)
+				} else {
+                  $location.path('login');
+                }
+                return $timeout(20);
+			});
+
+
             $scope.vacancy = {
                 imgUrl: 'https://'
             }
-
 
             $scope.AddVacancy = function(){
                 var rootRef = firebase.database().ref();
@@ -32,7 +45,10 @@ angular.module('admin', []).
                     salary : $scope.vacancy.salary,
                     city : $scope.vacancy.city,
                     imageUrl: $scope.vacancy.imgUrl,
-                    created: firebase.database.ServerValue.TIMESTAMP
+                    created: firebase.database.ServerValue.TIMESTAMP,
+                    email : $scope.vacancy.email,
+                    phone: $scope.vacancy.phone,
+                    description: $scope.vacancy.description
                 });
 
                 console.log('added');
@@ -41,12 +57,12 @@ angular.module('admin', []).
                     title: null,
                     position: null,
                     salary: null,
-                    city: null
+                    city: null,
+                    imageUrl: null,
+                    email: null,
+                    phone: null,
+                    description: null
                 }
-
-                $location.path('/');
             }
-            
         }
-
     });

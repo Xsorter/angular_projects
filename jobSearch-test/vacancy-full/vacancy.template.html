@@ -1,20 +1,16 @@
 <header-app></header-app>
 
 <div class="vacancy-full-box">
-
-	<img ng-src="{{$ctrl.vacancy.imgSrc}}" alt="{{$ctrl.vacancy.position}}">
-
+	<img ng-src="{{$ctrl.resFull.imageUrl}}" alt="{{$ctrl.resFull.position}}">
 	<h1>{{$ctrl.resFull.position}}</h1>
 	<p>{{$ctrl.resFull.title}}</p>
 	<p>{{$ctrl.resFull.salary | currency:"$"}}</p>
 	<p>{{$ctrl.resFull.city}}</p>
-
-	<p>{{$ctrl.vacancy.description}}</p>
-
+	<p>{{$ctrl.resFull.description}}</p>
 	<h3 class="vacancy-contacts-title">Contacts:</h3>
 	<ul>
-		<li ng-repeat="contact in $ctrl.vacancy.contacts">
-			{{contact}}
-		</li>
+		<li>{{$ctrl.resFull.phone}}</li>
+		<li>{{$ctrl.resFull.email}}</li>
 	</ul>
+	<a class="link-back" href="#!/vacancy">back to full vacancy list</a>
 </div>
