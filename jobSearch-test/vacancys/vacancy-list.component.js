@@ -5,11 +5,15 @@ let appVacancies = angular.module('vacancyList');
 appVacancies
 	.component('vacancyList', {
 		templateUrl: "vacancys/vacancy-list.html",
-		controller: ['Vac','$scope','$firebaseAuth','$timeout' ,'$firebaseArray', '$firebaseObject','$firebase', '$location', function VacancyListController (Vac,$q, $scope, $timeout, $firebaseAuth,$firebaseArray, $firebaseObject,$firebase, $location) {
+		controller: ['Vac','$scope', '$firebaseAuth','$timeout' ,'$firebaseArray', '$firebaseObject','$firebase', '$routeParams', '$location', function VacancyListController (Vac,$q, $scope, $timeout, $firebaseAuth,$firebaseArray, $firebaseObject, $firebase, $routeParams, $location) {
 			let self = this;
 			self.name = "Xsorter";
-			self.orderProp = 'added';
+			self.orderProp = '-created';
 			$scope.res = '';
+
+		
+			console.log($routeParams);
+
 
 			let rootRef = firebase.database().ref(); /*firebase request to database*/ 
 			rootRef.once('value')
@@ -24,7 +28,7 @@ appVacancies
 					return $timeout(20); /*set timeout to get promise*/ 
 			}); 
 			
-			self.vacancys = Vac.query(); 
+			/* self.vacancys = Vac.query();  */
 			
 		}]
 	});

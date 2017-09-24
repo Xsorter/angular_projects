@@ -1,7 +1,7 @@
 [
 	{
 		"id" : 1,
-		"imgSrc" : "img/logos/ciklum.jpg",
+		"imgSrc" : "https://i.imgur.com/X30dfNO.jpg",
 		"company": "Cicklum",
 		"position": "Software Engineer",
 		"salary": "3000 usd",
@@ -10,7 +10,7 @@
 	},
 	{
 		"id" : 2,
-		"imgSrc" : "img/logos/product.jpg",
+		"imgSrc" : "https://i.imgur.com/9I6CSO8.jpg",
 		"company": "Product Technology ltd",
 		"position": "Waitress",
 		"salary": "300 usd",
@@ -19,7 +19,7 @@
 	},
 	{
 		"id" : 3,
-		"imgSrc" : "img/logos/it_company.jpg",
+		"imgSrc" : "https://i.imgur.com/Z8y0XqX.jpg",
 		"company": "IT company",
 		"position": "Software Engineer",
 		"salary": "1000 usd",
@@ -28,7 +28,7 @@
 	},
 	{
 		"id" : 4,
-		"imgSrc" : "img/logos/guard.png",
+		"imgSrc" : "https://i.imgur.com/9ciZbG5.png",
 		"company": "Guard & co",
 		"position": "Guardian",
 		"salary": "200 usd",
@@ -37,7 +37,7 @@
 	},
 	{
 		"id" : 5,
-		"imgSrc" : "img/logos/fuib.jpg",
+		"imgSrc" : "https://i.imgur.com/PH4mYEr.jpg",
 		"company": "FUIB",
 		"position": "Sales manager",
 		"salary": "400 usd",
@@ -46,7 +46,7 @@
 	},
 	{
 		"id" : 6,
-		"imgSrc" : "img/logos/football.png",
+		"imgSrc" : "https://i.imgur.com/NqELJak.png",
 		"company": "Football Club",
 		"position": "Medician",
 		"salary": "800 usd",
@@ -55,7 +55,7 @@
 	},
 	{
 		"id" : 7,
-		"imgSrc" : "img/logos/school.jpg",
+		"imgSrc" : "https://i.imgur.com/bIxbCVD.jpg",
 		"company": "School",
 		"position": "Teacher",
 		"salary": "300 usd",
@@ -64,7 +64,7 @@
 	},
 	{
 		"id" : 8,
-		"imgSrc" : "img/logos/restaraunt.jpg",
+		"imgSrc" : "https://i.imgur.com/O3cL04E.jpg",
 		"company": "Restaraunt",
 		"position": "Baker",
 		"salary": "500 usd",

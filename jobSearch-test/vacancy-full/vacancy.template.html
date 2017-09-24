@@ -4,12 +4,11 @@
 
 	<img ng-src="{{$ctrl.vacancy.imgSrc}}" alt="{{$ctrl.vacancy.position}}">
 
-	<h1>{{$ctrl.vacancy.position}}</h1>
+	<h1>{{$ctrl.resFull.position}}</h1>
+	<p>{{$ctrl.resFull.title}}</p>
+	<p>{{$ctrl.resFull.salary | currency:"$"}}</p>
+	<p>{{$ctrl.resFull.city}}</p>
 
-
-	<p>{{$ctrl.vacancy.company}}</p>
-	<p>{{$ctrl.vacancy.salary}}</p>
-	<p>{{$ctrl.vacancy.city}}</p>
 	<p>{{$ctrl.vacancy.description}}</p>
 
 	<h3 class="vacancy-contacts-title">Contacts:</h3>

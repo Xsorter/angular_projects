@@ -14,21 +14,14 @@
 			<select ng-model="$ctrl.orderProp">
 				<option value="position">position name A-Z</option>
 				<option value="-position">position name Z-A</option>
-				<option value="added">latest added</option>
-				<option value="-added">first added</option>
+				<option selected value="-created">latest added</option>
+				<option value="created">first added</option>
 			</select>
 		</p>
 	</div>
 
-	<div>
-		rep 5
-		{{$ctrl.result}}
-		<div ng-repeat="item in $ctrl.result">
-			{{item.title}}
-		</div>
-	</div>
 
-	<ul class="vacancy-list-wrapper">
+	<!--<ul class="vacancy-list-wrapper">
 		<li ng-repeat="vacancy in $ctrl.vacancys | filter: $ctrl.query | orderBy: $ctrl.orderProp" class="item-box">
 
 			<a class="item-logo" href="#!/vacancy/{{vacancy.id}}">
@@ -44,6 +37,25 @@
 			<p>{{vacancy.salary}}</p>
 			<p>{{vacancy.city}}</p>
 			<p>Added {{vacancy.added}} days ago</p>
+		</li>
+	</ul>-->
+
+	<ul class="vacancy-list-wrapper">
+		<li ng-repeat="vacancy in $ctrl.result | filter: $ctrl.query | orderBy: $ctrl.orderProp" class="item-box">
+
+			<a class="item-logo" href="#!/vacancy/{{vacancy.id}}">
+				<img ng-src="{{vacancy.imageUrl}}" alt="{{vacancy.company}}">
+			</a>
+
+			<p class="company-title">{{vacancy.title}}</p>
+
+			<p>
+				<a href="#!/vacancy/{{vacancy.id}}">{{vacancy.position}}</a>
+			</p>
+
+			<p>{{vacancy.salary}}</p>
+			<p>{{vacancy.city}}</p>
+			<p>Added {{vacancy.created | date:'dd.MM.yyyy'}}</p>
 		</li>
 	</ul>
 </div>

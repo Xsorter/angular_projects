@@ -7,32 +7,32 @@ angular.module('admin', []).
             
             //UNCOMMENT that before prod!
 
-            /* let user = firebase.auth().currentUser;     
+            /*let user = firebase.auth().currentUser;     
             if(user){
                 console.log(user.email);
             }else{
                 $location.path('login');
             }
-
             $scope.commonProp = commonProp; 
             $scope.email = user.email; */
+            $scope.vacancy = {
+                imgUrl: 'https://'
+            }
+
 
             $scope.AddVacancy = function(){
                 var rootRef = firebase.database().ref();
                 var storesRef = rootRef.child('app/vacancies');
                 var newStoreRef = storesRef.push();
+                var key = newStoreRef.key;
                 newStoreRef.set({
+                    id: key,
                     title: $scope.vacancy.title,
                     position: $scope.vacancy.position,
                     salary : $scope.vacancy.salary,
-                    city : $scope.vacancy.city
-                });
-
-                rootRef.once('value') /*for test only, need to be deprecated!!*/ 
-                    .then(function (snap) {
-                        let arrVal = snap.val().app.vacancies;    
-                        $scope.fireArr = Object.values(arrVal);
-                        console.log('snap.val()', $scope.fireArr);
+                    city : $scope.vacancy.city,
+                    imageUrl: $scope.vacancy.imgUrl,
+                    created: firebase.database.ServerValue.TIMESTAMP
                 });
 
                 console.log('added');
@@ -43,6 +43,8 @@ angular.module('admin', []).
                     salary: null,
                     city: null
                 }
+
+                $location.path('/');
             }
             
         }
