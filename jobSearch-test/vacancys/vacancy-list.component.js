@@ -7,6 +7,7 @@ appVacancies
 		templateUrl: "vacancys/vacancy-list.html",
 		controller: ['Vac','$scope', '$firebaseAuth','$timeout' ,'$firebaseArray', '$firebaseObject','$firebase', '$routeParams', '$location', function VacancyListController (Vac,$q, $scope, $timeout, $firebaseAuth,$firebaseArray, $firebaseObject, $firebase, $routeParams, $location) {
 			let self = this;
+			$scope.isLoaded = false;
 			self.orderProp = '-created';
 			$scope.res = '';
 
@@ -21,10 +22,8 @@ appVacancies
 				return $timeout(20);
 			});
 			
-			let user = firebase.auth();
-			console.log(user.currentUser);
-			console.log($routeParams);
-
+			
+	
 
 
 			let rootRef = firebase.database().ref(); /*firebase request to database*/ 
@@ -37,9 +36,15 @@ appVacancies
 					})
 					console.log(self.result);
 					console.log($scope.res);
+					$scope.isLoaded = true;
 					return $timeout(20); /*set timeout to get promise*/ 
-			}); 
+			})
 			
+			
+			
+		
+			
+			console.log($scope.isLoaded);
 			/* self.vacancys = Vac.query();  */
 			
 		}]

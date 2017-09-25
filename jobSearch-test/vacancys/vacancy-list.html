@@ -3,6 +3,12 @@
 
 <div class="main-container">
 		
+	<div ng-show="!$ctrl.result"  class="loader-spinner-wrapper">
+		<object type="image/svg+xml" data="img/loader.svg" class="loader-spinner">
+		</object>
+	</div>
+
+	
 	<div class="filters-wrapper">
 		<p ng-show="$ctrl.name" class="ng-hide">Hi, {{$ctrl.name}}!</p>
 		<div ng-show="$ctrl.signedOut" class="ng-hide">

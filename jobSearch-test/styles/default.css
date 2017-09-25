@@ -189,6 +189,28 @@ header p{
 
 
 
+.loader-spinner-wrapper{
+	background: rgba(1,6,25,0.8);
+    width: 100%;
+    min-height: 100vh;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+	left: 0;
+	bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.loader-spinner{
+	width: 100px;
+	height: 100px;
+}
+
+
+
 
 
 .welcome-message-wrapper_signed-out{
