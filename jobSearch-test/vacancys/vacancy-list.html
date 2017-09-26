@@ -62,6 +62,9 @@
 	<ul class="vacancy-list-wrapper">
 		<li ng-repeat="vacancy in $ctrl.result | filter: $ctrl.query | orderBy: $ctrl.orderProp" class="item-box">
 
+			<div ng-show="!vacancy.imageUrl" style="background: green; width: 100px; height: 100px">
+			</div>
+
 			<a class="item-logo" href="#!/vacancy/{{vacancy.id}}">
 				<img ng-src="{{vacancy.imageUrl}}" alt="{{vacancy.company}}">
 			</a>
