@@ -18,13 +18,6 @@ angular.module('vacancyDetail').
 						return $timeout(10); /*set timeout to get promise*/ 
 				}); 
 
-				/* $http.get('json/' + $routeParams.$id + '.json').then(function(response){
-					self.vacancy = response.data;
-					console.log(response.data);
-				});  */
-				
-				console.log($routeParams.id);
-				console.log(routeParamceSliced);
 			}
 		]
 	});

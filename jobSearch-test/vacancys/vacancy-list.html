@@ -75,9 +75,9 @@
 				<a href="#!/vacancy/{{vacancy.id}}">{{vacancy.position}}</a>
 			</p>
 
-			<p>{{vacancy.salary}}</p>
-			<p>{{vacancy.city}}</p>
-			<p>Added {{vacancy.created | date:'dd.MM.yyyy'}}</p>
+			<p><b>Salary:</b> {{vacancy.salary | currency:"$"}}</p>
+			<p><b>City:</b> {{vacancy.city}}</p>
+			<p><b>Added:</b> {{vacancy.created | date:'dd.MM.yyyy'}}</p>
 		</li>
 	</ul>
 </div>

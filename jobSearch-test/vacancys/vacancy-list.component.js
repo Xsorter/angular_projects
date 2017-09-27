@@ -14,17 +14,12 @@ appVacancies
 			firebase.auth().onAuthStateChanged(function(user) {
 				if (user) {
 				  self.name = user.email;
-				  console.log(user)
 				} else {
 				  self.signedOut = true;		
-				  console.log('Not signed')
 				}
 				return $timeout(20);
 			});
 			
-			
-	
-
 
 			let rootRef = firebase.database().ref(); /*firebase request to database*/ 
 			rootRef.once('value')
@@ -34,18 +29,9 @@ appVacancies
 					angular.forEach(snap.val(), function(index) {
 						self.result = Object.values(index.vacancies); /*make an array for comfortable ng-repeat*/	
 					})
-					console.log(self.result);
-					console.log($scope.res);
 					$scope.isLoaded = true;
 					return $timeout(20); /*set timeout to get promise*/ 
 			})
-			
-			
-			
-		
-			
-			console.log($scope.isLoaded);
-			/* self.vacancys = Vac.query();  */
 			
 		}]
 	});

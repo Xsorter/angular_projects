@@ -12,11 +12,9 @@ angular.module('headerApp').
 				if (user) {
 				  $scope.signLink = user.email+' (admin dashboard)';
 				  $scope.signLinkA = '#!/admin';
-				  console.log(user.email)
 				} else {
 				  $scope.signLink = 'sign in';
 				  $scope.signLinkA = '#!/login';
-				  console.log('Not signed')
 				}
 				return $timeout(20);
 			});

@@ -5,23 +5,11 @@ angular.module('admin', []).
         templateUrl: 'admin/admin.template.html',
         controller: function adminController (commonProp, $scope, $timeout, $firebaseAuth,$firebaseArray, $firebaseObject,$firebase, $location){
             let self = this;
-            //UNCOMMENT that before prod!
-
-            /*let user = firebase.auth().currentUser;     
-            if(user){
-                console.log(user.email);
-            }else{
-                $location.path('login');
-            }
-        
-            $scope.email = user.email; */
-
             $scope.email = '';
 
             firebase.auth().onAuthStateChanged(function(user) {
 				if (user) {
                   $scope.email = user.email;
-				  console.log($scope.email)
 				} else {
                   $location.path('login');
                 }
@@ -51,9 +39,8 @@ angular.module('admin', []).
                     description: $scope.vacancy.description
                 });
 
-                console.log('added');
-
-                $scope.vacancy = { /*null the values to clear inputs*/ 
+                /*null the values to clear inputs*/     
+                $scope.vacancy = { 
                     title: null,
                     position: null,
                     salary: null,

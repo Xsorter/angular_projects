@@ -2,17 +2,16 @@
     <div class="login-wrapper">
         <form ng-submit="Auth()" class="login-form" name="regForm" role="form">
 
-            <input ng-model="username" type="email">
+            <input ng-model="username" type="email" placeholder="enter your e-mail">
             
-            <input ng-model="pass" type="password">
+            <input ng-model="pass" type="password" placeholder="enter your password">
             <p class="login-error">{{error}}</p>
             <p class="login-success">{{success}}</p>
 
-            <button ng-disabled="!username || !pass" type="submit">enter</button>
+            <button class="submit-button" ng-disabled="!username || !pass" type="submit">enter</button>
         </form>
     </div>
 </div>
 
-{{username}}
-{{pass}}
+
 

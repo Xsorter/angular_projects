@@ -22,7 +22,7 @@ input, select{
 header{
 	padding: 20px 5px 30px 5px;
 	text-align: center;
-	background: linear-gradient(90deg, #004b8c , #1792a5, #007a96);
+	background: linear-gradient(90deg, #004b8c , #176ba5, #001f67);
 	border-bottom: 2px solid #fff;
 }
 
@@ -54,12 +54,13 @@ header p{
 
 
 .login-wrapper{
-	background: green;
 	width: 200px;
-	height: 200px;
+	padding: 10px;
+	box-shadow: 1px 0px 4px 1px rgba(0,0,0,0.26);
+	text-align: center;
 }
 
-.login-erorr{
+.login-error{
 	margin: 10px;
     font-size: 85%;
 	color: red;
@@ -85,7 +86,40 @@ header p{
     overflow: auto;   
 }
 
+.login-container-wrapper input{
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 10px;
+	padding: 20px 10px;
+	font-size: 110%;
+	color: #555;
+	border: none;
+	border-bottom: 2px solid rgb(66, 133, 244);
+	background: #eaeaea;
+	
+	
+}
 
+
+.submit-button{
+	background: rgb(66, 133, 244);
+	border: 2px solid transparent;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 700;
+	padding: 5px 11px;
+	margin-top: 10px;
+	cursor: pointer;
+	transition: all ease-out 0.2s;
+}
+
+.submit-button:hover{
+	border: 2px solid rgb(66, 133, 244);
+	color: rgb(66, 133, 244);
+	background: #fff;
+	transition: all ease-out 0.2s;
+}
 
 
 .main-container{
@@ -125,7 +159,7 @@ header p{
 .item-box a{
 	color: #1979bf;
 	font-size: 110%;
-	z-index: 99;
+	z-index: 999;
 	position: relative;
 	text-decoration: none;
 	font-weight: 700;
@@ -234,4 +268,51 @@ header p{
 
 .welcome-message-wrapper_signed-out ul li{
 	font-family: monospace;
+}
+
+
+
+
+
+/***********Admin Panel***********/
+
+
+.admin-form-wrapper{
+	max-width: 600px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	box-shadow: 1px 0px 4px 1px rgba(0,0,0,0.26);
+	padding: 15px;
+	position: relative;
+	text-align: center;
+}
+
+
+.admin-form-wrapper input{
+	width: 100%;
+	margin-top: 10px;
+	padding: 20px 10px;
+	color: #555;
+	border: 1px solid #cdd9ff;
+	border-bottom: 2px solid rgb(66, 133, 244);
+	background: #fff;
+}
+
+.admin-form-wrapper textarea{
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px 10px;
+	min-height: 100px;
+	color: #555;
+	border: 1px solid #cdd9ff;
+	border-bottom: 2px solid rgb(66, 133, 244);
+	background: #fff;
+}
+
+
+/******************Helpers********************/
+
+.white{
+	color: #fff;
 }
