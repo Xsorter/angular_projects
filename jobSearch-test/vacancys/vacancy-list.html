@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p>Привет, {{$ctrl.name}}</p>
 
 <p>Список вакансий:</p>
@@ -7,3 +8,88 @@
 		<p>{{vacancy.position}}</p>
 	</li>
 </ul>
+=======
+
+<header-app></header-app>
+
+<div class="main-container">
+		
+	<div ng-show="!$ctrl.result"  class="loader-spinner-wrapper">
+		<object type="image/svg+xml" data="img/loader.svg" class="loader-spinner">
+		</object>
+	</div>
+
+	
+	<div class="filters-wrapper">
+		<p ng-show="$ctrl.name" class="ng-hide">Hi, {{$ctrl.name}}!</p>
+		<div ng-show="$ctrl.signedOut" class="ng-hide">
+			<p>Please, sign in to add new vacancies.</p>
+
+			<div class="welcome-message-wrapper_signed-out"> 
+				<p>You can do that in test mode with this records:</p>
+				<ul>
+					<li>login: test@test.com</li>
+					<li>pass: test01</li>
+				</ul>
+			</div> 
+		</div>
+
+		<p>List of our related vacancies:</p>
+
+		<p>Search <input type="text" name="search" ng-model="$ctrl.query"></p>
+		<p>
+			Order by: 
+			<select ng-model="$ctrl.orderProp">
+				<option value="position">position name A-Z</option>
+				<option value="-position">position name Z-A</option>
+				<option value="title">company name A-Z</option>
+				<option value="-title">company name Z-A</option>
+				<option value="-created">latest added</option>
+				<option value="created">first added</option>
+			</select>
+		</p>
+	</div>
+
+
+	<!--<ul class="vacancy-list-wrapper">
+		<li ng-repeat="vacancy in $ctrl.vacancys | filter: $ctrl.query | orderBy: $ctrl.orderProp" class="item-box">
+
+			<a class="item-logo" href="#!/vacancy/{{vacancy.id}}">
+				<img ng-src="{{vacancy.imgSrc}}" alt="{{vacancy.company}}">
+			</a>
+
+			<p class="company-title">{{vacancy.company}}</p>
+
+			<p>
+				<a href="#!/vacancy/{{vacancy.id}}">{{vacancy.position}}</a>
+			</p>
+
+			<p>{{vacancy.salary}}</p>
+			<p>{{vacancy.city}}</p>
+			<p>Added {{vacancy.added}} days ago</p>
+		</li>
+	</ul>-->
+
+	<ul class="vacancy-list-wrapper">
+		<li ng-repeat="vacancy in $ctrl.result | filter: $ctrl.query | orderBy: $ctrl.orderProp" class="item-box">
+
+			<div ng-show="!vacancy.imageUrl" style="background: green; width: 100px; height: 100px">
+			</div>
+
+			<a class="item-logo" href="#!/vacancy/{{vacancy.id}}">
+				<img ng-src="{{vacancy.imageUrl}}" alt="{{vacancy.company}}">
+			</a>
+
+			<p class="company-title">{{vacancy.title}}</p>
+
+			<p>
+				<a href="#!/vacancy/{{vacancy.id}}">{{vacancy.position}}</a>
+			</p>
+
+			<p><b>Salary:</b> {{vacancy.salary | currency:"$"}}</p>
+			<p><b>City:</b> {{vacancy.city}}</p>
+			<p><b>Added:</b> {{vacancy.created | date:'dd.MM.yyyy'}}</p>
+		</li>
+	</ul>
+</div>
+>>>>>>> gh-pages
