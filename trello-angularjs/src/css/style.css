@@ -16,8 +16,40 @@
 
 .list-box{
     display: inline-block;
+    vertical-align: top;
     width: 20%;
+    padding: 10px;
     box-sizing: border-box;
     background: green;
     margin-left: 5px;
+    margin-top: 10px;
+}
+
+.list-box-new{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #F3AC11;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.card{
+    background: #fff;
+    box-sizing: border-box;
+    padding: 3px;
+    margin-top: 10px;
+}
+
+.card-new{
+    background: #77FFFF;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.card-new input{
+    padding: 3px;
 }
