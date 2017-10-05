@@ -23,5 +23,19 @@ angular.module('app')
             return lists;
         };
 
+        service.addList = function(listName){
+            lists.push({
+                id: _.uniqueId('list_'),
+                listName: listName
+            })
+        }
+
+        service.removeList = function(list){
+            let index = lists.findIndex(function(o){
+                return o.id === list.id;
+            });
+            if (index !== -1) lists.splice(index, 1);
+        }
+
         return service;
     });

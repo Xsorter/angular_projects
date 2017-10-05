@@ -14,18 +14,26 @@
     
     <div id="lists-wrapper" class="lists-wrapper" ng-controller="listsCtrl as listsCtrl">
 
-        <div class="list-box" ng-repeat="list in listsCtrl.lists">
+        <div class="list-box" ng-repeat="list in listsCtrl.lists" ng-controller="listCtrl as listCtrl">
+            <span ng-click="listCtrl.removeList(list)">X</span>
             <h1>{{list.listName}}</h1>
+        </div>
+
+        <div>
+            <form ng-submit="listsCtrl.addList()">
+                <input type="text" ng-model="listsCtrl.listName">
+            </form>
         </div>
 
     </div>
 
 
     
-    <script src="http://underscorejs.org/underscore.js"></script>
+    <script src="js/libs/underscore.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/listsCtrl.js"></script>
+    <script src="js/controllers/listCtrl.js"></script>
     <script src="js/factories/listFactory.js"></script>
     
     
