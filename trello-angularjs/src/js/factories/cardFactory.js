@@ -39,5 +39,17 @@ angular.module('app')
             })
         }
 
+        service.removeCard = function(card){
+            let index = cards.findIndex(function(o){
+                return o.id === card.id;
+            });
+            if (index !== -1) cards.splice(index, 1);
+        }
+
+        service.updateCard = function(newCard){
+            let card = _.findWhere(cards, {id: newCard.id});
+            card.description = newCard.description;
+        }
+
         return service;
     })
