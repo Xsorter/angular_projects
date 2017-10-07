@@ -15,7 +15,7 @@ angular.module('app')
             this.editingCard = angular.copy(card);
         }
 
-        this.updateCard = function(card){
+        this.updateCard = function(){
             cardFactory.updateCard(this.editingCard);
             this.editingCard = null;
             this.editing = false;

@@ -49,6 +49,7 @@ angular.module('app')
         service.updateCard = function(newCard){
             let card = _.findWhere(cards, {id: newCard.id});
             card.description = newCard.description;
+            card.list_id = newCard.list_id;
         }
 
         return service;
