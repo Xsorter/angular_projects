@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalise.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Trello AngularJs</title>
+</head>
+<body ng-cloak>
+
+    <section>
+        <header class="header-wrapper">
+            <p class="header-title">Trello-angular</p>
+        </header>
+    
+        <div id="lists-wrapper" class="lists-wrapper" ng-controller="listsCtrl as listsCtrl">
+            <div class="list-box" ng-repeat="list in listsCtrl.lists" ng-controller="listCtrl as listCtrl">
+                <div class="list-delete" ng-click="listCtrl.removeList(list)">
+                    <img width="15" src="img/delete.svg" alt="list delete">
+                </div>
+                <h1>{{list.listName}}</h1>
+                <div class="card" ng-controller="cardCtrl as cardCtrl" ng-repeat="card in listCtrl.getCards(list)">
+                    <div ng-if="!cardCtrl.editing">
+                        <div class="card-icon" ng-click="cardCtrl.removeCard(card)">
+                            <img width="15" src="img/delete-card.svg" alt="card delete">
+                        </div> 
+                        <div class="card-icon" ng-click="cardCtrl.editCard(card)">
+                            <img width="17" src="img/edit.svg" alt="card edit">
+                        </div>
+                        <p class="card-description">{{card.description}}</p>
+                    </div>
+
+                    <div class="card card-editing" ng-if="cardCtrl.editing">
+                        <form ng-submit="cardCtrl.updateCard()">
+                            <input type="text" 
+                            close-editing
+                            is-editing = "cardCtrl.editing" 
+                            ng-model="cardCtrl.editingCard.description">
+
+                            <select class="card-category-select" name="select-card" id="select-card"
+                                    ng-model="cardCtrl.editingCard.list_id"
+                                    ng-change="cardCtrl.updateCard()"
+                                    ng-options="list.id as list.listName for list in listsCtrl.lists">
+                            </select>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card-new">
+                    <form ng-submit="listCtrl.createCard(list)">
+                        <input type="text" ng-model="listCtrl.cardDescription" placeholder="Add new card">
+                    </form>
+                </div>
+            </div>
+
+            <div class="list-box-new">
+                <form ng-submit="listsCtrl.addList()">
+                    <input type="text" ng-model="listsCtrl.listName" placeholder="Add new list">
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/libs/underscore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/listsCtrl.js"></script>
+    <script src="js/controllers/listCtrl.js"></script>
+    <script src="js/controllers/cardCtrl.js"></script>
+    <script src="js/directives/closeEditing.js"></script>
+    <script src="js/factories/listFactory.js"></script>
+    <script src="js/factories/cardFactory.js"></script>
+    
+</body>
+</html>
