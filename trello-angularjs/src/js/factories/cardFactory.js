@@ -7,22 +7,22 @@ angular.module('app')
         let cards = [
             {
                 id: 1,
-                description: 'description1',
+                description: 'Buy milk',
                 list_id: 1
             },
             {
                 id: 2,
-                description: 'description2',
+                description: 'Go for a walk',
                 list_id: 2
             },
             {
                 id: 3,
-                description: 'description3',
+                description: 'Go to the gym',
                 list_id: 3
             },
             {
                 id: 4,
-                description: 'description4',
+                description: 'Read news',
                 list_id: 2
             }
         ]
